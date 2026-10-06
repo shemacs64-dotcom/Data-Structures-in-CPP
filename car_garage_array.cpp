@@ -1,19 +1,15 @@
 #include <iostream>
 using namespace std;
-
 #define MAX 5
-
 class Parking
 {
     int car[MAX];
     int top;
-
 public:
     Parking()
     {
         top = -1;
     }
-
     void enterCar(int num)
     {
         if (top == MAX - 1)
@@ -27,7 +23,6 @@ public:
             cout << "Car entered successfully\n";
         }
     }
-
     void leaveCar()
     {
         if (top == -1)
@@ -40,7 +35,6 @@ public:
             top--;
         }
     }
-
     void display()
     {
         if (top == -1)
@@ -58,12 +52,10 @@ public:
         }
     }
 };
-
 int main()
 {
     Parking p;
     int choice, num;
-
     do
     {
         cout << "\n--- CAR PARKING GARAGE ---\n";
@@ -73,7 +65,6 @@ int main()
         cout << "4. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
-
         switch (choice)
         {
         case 1:
@@ -81,24 +72,18 @@ int main()
             cin >> num;
             p.enterCar(num);
             break;
-
         case 2:
             p.leaveCar();
             break;
-
         case 3:
             p.display();
             break;
-
         case 4:
             cout << "Exiting...\n";
             break;
-
         default:
             cout << "Invalid choice\n";
         }
-
     } while (choice != 4);
-
     return 0;
 }
